@@ -76,6 +76,10 @@ public FinancialAdviceAiContent generateAdvice(String financialContextJson) {
 
             switch (response.statusCode()) {
 
+                case 400:
+                    message = "El servidor donde está alojada la aplicación no está permitido por la API de Gemini. Por favor, contacta al administrador.";
+                    break;
+
                 case 403:
                     message = "La API de Gemini no está autorizada.";
                     break;
