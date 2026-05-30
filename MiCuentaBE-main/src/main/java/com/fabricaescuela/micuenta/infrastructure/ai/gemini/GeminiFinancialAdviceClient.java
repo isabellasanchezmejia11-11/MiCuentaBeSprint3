@@ -68,6 +68,8 @@ public FinancialAdviceAiContent generateAdvice(String financialContextJson) {
                 HttpResponse.BodyHandlers.ofString()
         );
 
+        System.out.println("Gemini Response: " + response.body());
+
         if (response.statusCode() < 200 || response.statusCode() >= 300) {
 
             String message;
